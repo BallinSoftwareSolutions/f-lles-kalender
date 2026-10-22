@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8fb">
+  <title>Vores kalender ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="login-screen">
+  <h2>Vores kalender ❤️</h2>
+  <p>Log ind for at se vores aftaler</p>
+
+  <form id="login-form">
+    <input type="email" id="login-email"
+           placeholder="Din e-mail" required>
+
+    <input type="password" id="login-password"
+           placeholder="Adgangskode" required>
+
+    <button type="submit">Log ind ❤️</button>
+  </form>
+
+  <p id="login-error"></p>
+</section>
+
+<main class="app">
+  <header>
+    <div><p class="eyebrow">VORES KALENDER ❤️</p><h1 id="month-title"></h1></div><div class="nav"><button id="prev" aria-label="Forrige måned">‹</button><button id="next" aria-label="Næste måned">›</button></div></header>
+  <section class="calendar" aria-label="Månedskalender"><div id="weekdays" class="weekdays"></div><div id="days" class="days"></div></section>
+  <section class="agenda"><div class="section-title"><h2 id="selected-title"></h2><button id="add">+ Ny aftale</button></div><div id="events"></div></section>
+  <dialog id="editor"><form id="event-form"><h2 id="form-title">Ny aftale</h2><label>Titel<input id="title" required maxlength="80" placeholder="Fx Date night"></label><label>Dato<input id="date" type="date" required></label><label>Tidspunkt<input id="time" type="time"></label><label>Beskrivelse<textarea id="description" rows="3" maxlength="500"></textarea></label><div class="actions"><button type="button" id="cancel">Annuller</button><button type="submit" class="primary">Gem</button></div></form></dialog>
+  <p class="note">Demo: Aftaler gemmes kun på denne enhed. Fælles synkronisering tilføjes senere.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
